@@ -1,0 +1,32 @@
+# Build / Publish
+bin/
+obj/
+out/
+*.user
+*.swp
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS / Rider
+.vs/
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker
+docker-data/
+.env
+**/migrations/
+
+# Dotnet artifacts
+*.nupkg
+*.snupkg
+*.db

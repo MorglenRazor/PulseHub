@@ -1,0 +1,37 @@
+services:
+  postgres_auth:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pulsehub_auth
+    ports: ["5434:5432"]
+    restart: always
+
+  postgres_catalog:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pulsehub_catalog
+    ports: ["5435:5432"]
+    restart: always
+
+  postgres_orders:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pulsehub_orders
+    ports: ["5436:5432"]
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports: ["5672:5672", "15672:15672"]
+    restart: always
