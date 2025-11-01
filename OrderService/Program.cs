@@ -34,8 +34,14 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
+
+app.MapGet("/healthz", () => Results.Ok(new { ok = true }));
+
 
 app.Run();
